@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JUDY ATELIER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&family=Amiri&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #F5F4EF;
+  color: #0B1C2D;
+}
+
+/* HEADER */
+header {
+  background: #0B1C2D;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav a {
+  color: #F5F4EF;
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 50px;
+  background: linear-gradient(120deg,#0B1C2D,#122A42);
+  color: #F5F4EF;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.arabic {
+  font-family: 'Amiri', serif;
+  color: #C8A24D;
+  font-size: 32px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  background: #C8A24D;
+  color: #0B1C2D;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero img {
+  max-width: 450px;
+  border-radius: 20px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer {
+  background: #0B1C2D;
+  color: #F5F4EF;
+  text-align: center;
+  padding: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="images/logo.png" class="logo">
+  <nav>
+    <a href="#">Collections</a>
+    <a href="#">Brands</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>JUDY ATELIER</h1>
+    <div class="arabic">أتيليه جودي</div>
+    <p>Premium Kidswear Collections for Modern Stores</p>
+    <a class="btn" href="https://wa.me/20100000040">Order on WhatsApp</a>
+  </div>
+  <img src="images/hero.jpg">
+</section>
+
+<section class="section">
+  <h2>Our Brands</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Judy Kids</h3>
+      <p>Girls & Teen premium collections</p>
+    </div>
+    <div class="card">
+      <h3>MJ</h3>
+      <p>Modern boyswear for active kids</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why Stores Choose Us</h2>
+  <div class="cards">
+    <div class="card">High-demand designs</div>
+    <div class="card">Factory-direct pricing</div>
+    <div class="card">Fast reorders</div>
+    <div class="card">AI-powered visuals</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 JUDY ATELIER — All Rights Reserved
+</footer>
+
+</body>
+</html>
