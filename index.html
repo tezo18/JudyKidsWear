@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUDY ATELIER — Premium Kidswear</title>
+    
+    <!-- 🟢 FIXED: Added SEO Meta Tags -->
+    <title>JUDY ATELIER — Premium Kidswear Collections for Stores</title>
+    <meta name="description" content="Wholesale premium kidswear: Judy Kids & MJ Wear. AI-powered visuals, factory-direct pricing. Order now for your store.">
+    <meta property="og:title" content="JUDY ATELIER — Premium Kidswear">
+    <meta property="og:image" content="https://judy-atelier.netlify.app/images/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 🟢 FIXED: Added favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <style>
         :root {
             --midnight: #0B1C2D;
@@ -31,29 +42,48 @@
             overflow-x: hidden;
         }
 
-        /* HEADER */
+        /* 🟢 FIXED: HEADER - Professional */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(245, 244, 239, 0.92);
+            background: rgba(245, 244, 239, 0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1.2rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(11, 28, 45, 0.05);
         }
 
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        /* 🟢 FIXED: Logo size fixed */
         .logo {
-            height: 42px;
+            height: 48px;
             width: auto;
+            max-width: 180px;
+            object-fit: contain;
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -72,19 +102,35 @@
         .nav-cta {
             background: var(--midnight);
             color: white;
-            padding: 0.7rem 1.5rem;
+            padding: 0.7rem 1.8rem;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
         }
 
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        /* 🟢 FIXED: Mobile menu button */
         .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--midnight);
+            cursor: pointer;
+            padding: 0.5rem;
         }
 
         /* HERO */
         .hero {
-            padding: 10rem 5% 6rem;
+            padding: 9rem 5% 6rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -94,7 +140,7 @@
 
         .hero-content h1 {
             font-family: 'Clash Display', sans-serif;
-            font-size: 4rem;
+            font-size: 3.8rem;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
@@ -102,7 +148,7 @@
 
         .hero-arabic {
             font-family: 'Amiri', serif;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             color: var(--gold);
             margin-bottom: 2rem;
             display: block;
@@ -164,6 +210,8 @@
             width: 100%;
             border-radius: 24px;
             box-shadow: 0 40px 60px rgba(11, 28, 45, 0.12);
+            height: 500px;
+            object-fit: cover;
         }
 
         .floating-badge {
@@ -190,7 +238,7 @@
             color: rgba(11, 28, 45, 0.6);
         }
 
-        /* BRANDS SECTION */
+        /* SECTIONS */
         .section {
             padding: 6rem 5%;
         }
@@ -199,10 +247,58 @@
             font-family: 'Clash Display', sans-serif;
             font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: rgba(11, 28, 45, 0.6);
+            margin-bottom: 3.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* 🟢 FIXED: Added Gallery Section */
+        .gallery-section {
+            background: rgba(200, 162, 77, 0.03);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 320px;
+            background: #f0f0f0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(11, 28, 45, 0.9));
+            color: white;
+            width: 100%;
+            padding: 1.5rem;
+        }
+
+        /* BRANDS */
         .brands-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -266,6 +362,88 @@
             margin-bottom: 1rem;
         }
 
+        /* 🟢 FIXED: Enhanced Contact Section */
+        .contact-section {
+            padding: 6rem 5%;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding-right: 2rem;
+        }
+
+        .contact-methods {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--midnight);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(11, 28, 45, 0.1);
+        }
+
+        .contact-link:hover {
+            color: var(--gold);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem;
+            border: 1px solid rgba(11, 28, 45, 0.1);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(200, 162, 77, 0.1);
+        }
+
         /* CTA */
         .cta-section {
             background: linear-gradient(135deg, var(--midnight) 0%, #122A42 100%);
@@ -291,7 +469,7 @@
         }
 
         .footer-logo {
-            height: 50px;
+            height: 60px;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
@@ -322,50 +500,117 @@
             border-top: 1px solid rgba(245, 244, 239, 0.1);
         }
 
-        /* MOBILE */
+        /* 🟢 FIXED: Mobile Responsive */
         @media (max-width: 992px) {
             .hero {
                 grid-template-columns: 1fr;
                 padding-top: 8rem;
                 text-align: center;
+                gap: 3rem;
             }
+            
             .hero-content h1 {
                 font-size: 3rem;
             }
+            
             .hero-arabic {
                 font-size: 2.2rem;
             }
-            .nav-links, .nav-cta {
-                display: none;
+            
+            .hero-image {
+                height: 400px;
             }
+            
+            /* Mobile Navigation */
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                display: none;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
             .mobile-toggle {
                 display: block;
-                font-size: 1.5rem;
-                color: var(--midnight);
-                cursor: pointer;
             }
+            
             .floating-badge {
                 position: relative;
                 bottom: auto;
                 right: auto;
                 margin: 2rem auto 0;
             }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .contact-link {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 5%;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .brands-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- 🟢 FIXED: Professional Header -->
     <header class="header">
-        <img src="images/logo.png" alt="JUDY ATELIER Logo" style="height: 220px;">
-        <nav class="nav-links">
-            <a href="#collections">Collections</a>
-            <a href="#brands">Brands</a>
-            <a href="#why">Why Us</a>
-            <a href="#contact">Contact</a>
-            <a href="https://wa.me/20100000040" class="nav-cta">Order Now</a>
-        </nav>
-        <div class="mobile-toggle">
-            <i class="fas fa-bars"></i>
+        <div class="header-container">
+            <a href="/" class="logo-link">
+                <img src="images/logo.png" alt="JUDY ATELIER - Premium Kidswear" class="logo">
+            </a>
+            
+            <nav class="nav-links" id="mainNav">
+                <a href="#collections">Collections</a>
+                <a href="#brands">Brands</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+                <a href="https://wa.me/20100000040" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+            </nav>
+            
+            <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -382,11 +627,11 @@
                 <a href="https://wa.me/20100000040" class="btn-primary">
                     <i class="fab fa-whatsapp"></i> Request Catalog
                 </a>
-                <a href="#collections" class="btn-secondary">View Collections</a>
+                <a href="#gallery" class="btn-secondary">View Gallery</a>
             </div>
         </div>
         <div class="hero-visual">
-            <img src="images/hero.jpg" alt="JUDY ATELIER Fashion Model" class="hero-image">
+            <img src="images/hero.jpg" alt="JUDY ATELIER Fashion Models" class="hero-image">
             <div class="floating-badge">
                 <div class="badge-title">48h</div>
                 <div class="badge-sub">Avg. order fulfillment</div>
@@ -397,23 +642,77 @@
     <!-- BRANDS -->
     <section class="section" id="brands">
         <h2 class="section-title">Our Houses</h2>
+        <p class="section-subtitle">Two distinct brands, one standard of excellence</p>
         <div class="brands-grid">
             <div class="brand-card">
                 <div class="brand-icon">👧</div>
                 <h3>Judy Kids</h3>
                 <p>Elegant girls & teen collections. Designed for comfort, built for style.</p>
+                <a href="#gallery" style="color: var(--gold); text-decoration: none; margin-top: 1rem; display: inline-block;">View Collection →</a>
             </div>
             <div class="brand-card">
                 <div class="brand-icon">👦</div>
                 <h3>MJ Wear</h3>
                 <p>Modern boyswear. Active, casual, and always on-trend.</p>
+                <a href="#gallery" style="color: var(--gold); text-decoration: none; margin-top: 1rem; display: inline-block;">View Collection →</a>
             </div>
+        </div>
+    </section>
+
+    <!-- 🟢 FIXED: Added Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <h2 class="section-title">AI-Powered Collections</h2>
+        <p class="section-subtitle">See how our designs come to life with cutting-edge AI visualization</p>
+        
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="images/model1.jpg" alt="Judy Kids - Summer Collection 2025" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Summer 2025</h4>
+                    <p>Girls Collection</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="images/model2.jpg" alt="MJ Wear - Casual Style" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Casual Style</h4>
+                    <p>Boys Collection</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="images/model3.jpg" alt="Evening Wear Collection" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Evening Wear</h4>
+                    <p>Special Occasions</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="images/model4.jpg" alt="Active Wear Collection" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Active Wear</h4>
+                    <p>Comfort & Style</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://wa.me/20100000040?text=I%20want%20to%20see%20more%20collections" class="btn-secondary">
+                View Full Catalog on WhatsApp
+            </a>
         </div>
     </section>
 
     <!-- WHY US -->
     <section class="section" id="why">
         <h2 class="section-title">Why Choose JUDY ATELIER</h2>
+        <p class="section-subtitle">What makes us the preferred choice for stores across Egypt</p>
         <div class="features-grid">
             <div class="feature">
                 <i class="fas fa-bolt"></i>
@@ -438,15 +737,43 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section" id="contact">
-        <h2 class="cta-title">Ready to Stock Premium Kidswear?</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9;">
-            Join stores across Egypt scaling with our collections.
-        </p>
-        <a href="https://wa.me/20100000040" class="btn-primary" style="background: white; color: var(--midnight); font-size: 1.1rem; padding: 1.2rem 3rem;">
-            <i class="fab fa-whatsapp"></i> WhatsApp for Wholesale Pricing
-        </a>
+    <!-- 🟢 FIXED: Enhanced Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="cta-title">Wholesale Inquiries</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Ready to stock premium kidswear? Get pricing, catalogs, and samples directly.
+                </p>
+                
+                <div class="contact-methods">
+                    <a href="tel:+20100000000" class="contact-link">
+                        <i class="fas fa-phone"></i> +20 100 000 0040
+                    </a>
+                    <a href="mailto:orders@judyatelier.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> orders@judyatelier.com
+                    </a>
+                </div>
+                
+                <a href="https://wa.me/20100000040" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Business
+                </a>
+            </div>
+            
+            <div class="contact-form">
+                <form id="wholesaleForm">
+                    <h3 style="margin-bottom: 1.5rem; font-family: 'Clash Display', sans-serif;">Request Wholesale Info</h3>
+                    <input type="text" placeholder="Store Name *" required>
+                    <input type="text" placeholder="Your Name *" required>
+                    <input type="tel" placeholder="Phone Number *" required>
+                    <input type="email" placeholder="Email Address *" required>
+                    <textarea placeholder="Tell us about your store and requirements..." rows="4"></textarea>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-paper-plane"></i> Send Request
+                    </button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -455,7 +782,7 @@
         <div class="footer-links">
             <a href="#collections">Collections</a>
             <a href="#brands">Brands</a>
-            <a href="#why">Why Us</a>
+            <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
             <a href="tel:+20100000000">+20 100 000 0040</a>
         </div>
@@ -465,15 +792,82 @@
         </p>
     </footer>
 
+    <!-- 🟢 FIXED: Enhanced JavaScript -->
     <script>
-        // Simple mobile menu toggle
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            const nav = document.querySelector('.nav-links');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileToggle.addEventListener('click', () => {
+            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            mobileToggle.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+            mobileToggle.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('wholesaleForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            this.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: 'Clash Display', sans-serif; margin-bottom: 1rem;">Request Sent!</h3>
+                    <p>Thank you for your interest. We will contact you within 24 hours.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(11, 28, 45, 0.6);">
+                        You can also WhatsApp us directly at +20 100 000 0040
+                    </p>
+                </div>
+            `;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(245, 244, 239, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(11, 28, 45, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(245, 244, 239, 0.95)';
+                header.style.boxShadow = 'none';
+            }
         });
     </script>
 </body>
 </html>
-
-
-
