@@ -1,166 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>JUDY ATELIER</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUDY ATELIER — Premium Kidswear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --midnight: #0B1C2D;
+            --ivory: #F5F4EF;
+            --gold: #C8A24D;
+            --gold-light: #E0BC66;
+            --shadow: rgba(11, 28, 45, 0.08);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&family=Amiri&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #F5F4EF;
-  color: #0B1C2D;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ivory);
+            color: var(--midnight);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* HEADER */
-header {
-  background: #0B1C2D;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 244, 239, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(11, 28, 45, 0.05);
+        }
 
-.logo {
-  height: 50px;
-}
+        .logo {
+            height: 42px;
+            width: auto;
+        }
 
-nav a {
-  color: #F5F4EF;
-  margin-left: 30px;
-  text-decoration: none;
-  font-weight: 500;
-}
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
 
-/* HERO */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 100px 50px;
-  background: linear-gradient(120deg,#0B1C2D,#122A42);
-  color: #F5F4EF;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--midnight);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
 
-.hero-text {
-  max-width: 500px;
-}
+        .nav-links a:hover {
+            color: var(--gold);
+        }
 
-.hero-text h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 60px;
-}
+        .nav-cta {
+            background: var(--midnight);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-.hero-text p {
-  margin: 20px 0;
-  font-size: 18px;
-}
+        .mobile-toggle {
+            display: none;
+        }
 
-.arabic {
-  font-family: 'Amiri', serif;
-  color: #C8A24D;
-  font-size: 32px;
-}
+        /* HERO */
+        .hero {
+            padding: 10rem 5% 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 36px;
-  background: #C8A24D;
-  color: #0B1C2D;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-}
+        .hero-content h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
 
-.hero img {
-  max-width: 450px;
-  border-radius: 20px;
-}
+        .hero-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            display: block;
+        }
 
-/* SECTIONS */
-.section {
-  padding: 80px 50px;
-  text-align: center;
-}
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: rgba(11, 28, 45, 0.7);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-.card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
+        .btn-primary {
+            background: var(--gold);
+            color: var(--midnight);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+        }
 
-/* FOOTER */
-footer {
-  background: #0B1C2D;
-  color: #F5F4EF;
-  text-align: center;
-  padding: 40px;
-}
-</style>
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--midnight);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--midnight);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--midnight);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 40px 60px rgba(11, 28, 45, 0.12);
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px var(--shadow);
+            text-align: center;
+            max-width: 180px;
+        }
+
+        .badge-title {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .badge-sub {
+            font-size: 0.85rem;
+            color: rgba(11, 28, 45, 0.6);
+        }
+
+        /* BRANDS SECTION */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-title {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-card {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 40px var(--shadow);
+            transition: transform 0.4s, box-shadow 0.4s;
+            border: 1px solid rgba(11, 28, 45, 0.05);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(11, 28, 45, 0.15);
+        }
+
+        .brand-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .brand-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* WHY US */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(200, 162, 77, 0.05);
+            border-radius: 20px;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h4 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--midnight) 0%, #122A42 100%);
+            color: white;
+            padding: 5rem 5%;
+            border-radius: 40px;
+            text-align: center;
+            margin: 4rem 5%;
+        }
+
+        .cta-title {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 4rem 5% 2rem;
+            background: var(--midnight);
+            color: rgba(245, 244, 239, 0.8);
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(245, 244, 239, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(245, 244, 239, 0.5);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(245, 244, 239, 0.1);
+        }
+
+        /* MOBILE */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 8rem;
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-arabic {
+                font-size: 2.2rem;
+            }
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .mobile-toggle {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--midnight);
+                cursor: pointer;
+            }
+            .floating-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin: 2rem auto 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- HEADER -->
+    <header class="header">
+        <img src="images/logo.png" alt="JUDY ATELIER Logo" class="logo">
+        <nav class="nav-links">
+            <a href="#collections">Collections</a>
+            <a href="#brands">Brands</a>
+            <a href="#why">Why Us</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/20100000040" class="nav-cta">Order Now</a>
+        </nav>
+        <div class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
 
-<header>
-  <img src="images/logo.png" class="logo">
-  <nav>
-    <a href="#">Collections</a>
-    <a href="#">Brands</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>JUDY ATELIER</h1>
+            <span class="hero-arabic">أتيليه جودي</span>
+            <p class="hero-tagline">
+                Premium kidswear collections crafted for modern boutiques and forward-thinking stores. 
+                AI-powered visuals, wholesale excellence, fast turnover.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/20100000040" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Request Catalog
+                </a>
+                <a href="#collections" class="btn-secondary">View Collections</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="images/hero.jpg" alt="JUDY ATELIER Fashion Model" class="hero-image">
+            <div class="floating-badge">
+                <div class="badge-title">48h</div>
+                <div class="badge-sub">Avg. order fulfillment</div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>JUDY ATELIER</h1>
-    <div class="arabic">أتيليه جودي</div>
-    <p>Premium Kidswear Collections for Modern Stores</p>
-    <a class="btn" href="https://wa.me/201002400400">Order on WhatsApp</a>
-  </div>
-  <img src="images/hero.jpg">
-</section>
+    <!-- BRANDS -->
+    <section class="section" id="brands">
+        <h2 class="section-title">Our Houses</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-icon">👧</div>
+                <h3>Judy Kids</h3>
+                <p>Elegant girls & teen collections. Designed for comfort, built for style.</p>
+            </div>
+            <div class="brand-card">
+                <div class="brand-icon">👦</div>
+                <h3>MJ Wear</h3>
+                <p>Modern boyswear. Active, casual, and always on-trend.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-  <h2>Our Brands</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Judy Kids</h3>
-      <p>Girls & Teen premium collections</p>
-    </div>
-    <div class="card">
-      <h3>MJ</h3>
-      <p>Modern boyswear for active kids</p>
-    </div>
-  </div>
-</section>
+    <!-- WHY US -->
+    <section class="section" id="why">
+        <h2 class="section-title">Why Choose JUDY ATELIER</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h4>High-Demand Designs</h4>
+                <p>Seasonal collections tested for market success.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-industry"></i>
+                <h4>Factory Direct</h4>
+                <p>No middlemen. Competitive wholesale pricing.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>Fast Reorders</h4>
+                <p>Reliable supply chain. Keep your shelves full.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-robot"></i>
+                <h4>AI Visual Engine</h4>
+                <p>Cutting-edge model imagery that sells for you.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-  <h2>Why Stores Choose Us</h2>
-  <div class="cards">
-    <div class="card">High-demand designs</div>
-    <div class="card">Factory-direct pricing</div>
-    <div class="card">Fast reorders</div>
-    <div class="card">AI-powered visuals</div>
-  </div>
-</section>
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <h2 class="cta-title">Ready to Stock Premium Kidswear?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9;">
+            Join stores across Egypt scaling with our collections.
+        </p>
+        <a href="https://wa.me/20100000040" class="btn-primary" style="background: white; color: var(--midnight); font-size: 1.1rem; padding: 1.2rem 3rem;">
+            <i class="fab fa-whatsapp"></i> WhatsApp for Wholesale Pricing
+        </a>
+    </section>
 
-<footer>
-  © 2026 JUDY ATELIER — All Rights Reserved
-</footer>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="images/logo.png" alt="JUDY ATELIER Logo" class="footer-logo">
+        <div class="footer-links">
+            <a href="#collections">Collections</a>
+            <a href="#brands">Brands</a>
+            <a href="#why">Why Us</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+20100000000">+20 100 000 0040</a>
+        </div>
+        <p class="copyright">
+            © 2026 JUDY ATELIER. All rights reserved.<br>
+            Premium kidswear for modern retailers.
+        </p>
+    </footer>
 
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>
-
-
